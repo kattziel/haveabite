@@ -5,7 +5,7 @@ import { CATEGORIES } from "../data/dummy-data";
 
 function renderCategoryItem(itemData) {
   return (
-    <CategoryGridTile title={itemData.item.title} color={itemData.item.color} />
+    <CategoryGridTile title={itemData.item.title} color={itemData.item.color } />
   );
 }
 
