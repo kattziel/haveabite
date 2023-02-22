@@ -1,15 +1,28 @@
-import { Text, View, Image, StyleSheet, ScrollView } from "react-native";
+import { Text, View, Image, StyleSheet, ScrollView, Button } from "react-native";
+import { useLayoutEffect } from "react";
 
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/MealDetail/Subtitle";
 import List from "../components/MealDetail/List";
 
-function MealDetailScreen({ route }) {
+function MealDetailScreen({ route, navigation }) {
   const mealId = route.params.mealId;
 
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
   //   it gives us selected meal of a particular id hence we can show it to the screen later
+
+  function headerButtonPressHandler() {
+    console.log("pressed!");
+  }
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+        headerRight: () => {
+            return <Button title="Tap me!" onPress={headerButtonPressHandler}/>
+        }
+    })
+  }, [navigation, headerButtonPressHandler]);
 
   return (
     <View>
@@ -38,9 +51,9 @@ function MealDetailScreen({ route }) {
 export default MealDetailScreen;
 
 const styles = StyleSheet.create({
-    rootContainer: {
-        margin: 10
-    },
+  rootContainer: {
+    margin: 10,
+  },
   image: {
     width: "100%",
     height: 250,
@@ -56,7 +69,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   listOuterContainer: {
-alignItems: 'center'
+    alignItems: "center",
   },
   listContainer: {
     width: "80%",
