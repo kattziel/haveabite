@@ -20,10 +20,10 @@ function DrawerNavigator() {
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: "#351401" },
+        headerStyle: { backgroundColor: "#11014a" },
         headerTintColor: "white",
-        sceneContainerStyle: { backgroundColor: "#3f2f25" },
-        drawerContentStyle: { backgroundColor: "#351401" },
+        sceneContainerStyle: { backgroundColor: "#11014a" },
+        drawerContentStyle: { backgroundColor: "#11014a" },
         drawerInactiveTintColor: "white",
         drawerActiveTintColor: "#e4baa1",
       }}
